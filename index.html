@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Woobin Jeong</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* 전역 스타일 */
+        :root {
+            --primary-color: #4A90E2; /* 세련된 파란색 */
+            --secondary-color: #F5A623; /* 따뜻한 오렌지색 */
+            --background-color: #FAFAFA; /* 밝은 배경색 */
+            --text-color: #333333; /* 어두운 텍스트 색상 */
+            --heading-color: #1A1A1A; /* 제목 색상 */
+            --light-gray: #f5f5f5; /* 연한 회색 */
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        .toggle-btn {
+            font-size: 1.5rem;
+            background-color: transparent;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        nav {
+            display: none; /* 기본적으로 숨김 */
+        }
+
+        nav.show-nav {
+            display: flex; /* 토글 버튼 클릭 시 표시 */
+            flex-direction: column;
+            background-color: var(--primary-color);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+        }
+
+        nav a:hover {
+            background-color: var(--secondary-color);
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 30px auto;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        section h2 {
+            font-size: 1.5rem;
+            color: var(--heading-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        /* About Me 섹션 스타일 */
+        #introduction {
+            background-color: var(--light-gray); /* 연한 회색 배경 */
+            padding: 30px; /* 여백 추가 */
+            border-radius: 8px; /* 둥근 모서리 처리 */
+        }
+
+        #introduction .content-wrapper {
+            display: flex; /* 좌우 정렬을 위한 flexbox */
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        #introduction .text-content {
+            flex-basis: 50%; /* 텍스트 부분이 차지할 공간 비율 */
+        }
+
+        #introduction .image-content {
+            flex-basis: 50%; /* 이미지 부분이 차지할 공간 비율 */
+            text-align: center;
+        }
+
+        #introduction img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px; /* 이미지 모서리 둥글게 처리 */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+        }
+
+        footer {
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        /* 반응형 디자인 */
+        @media (max-width :768px) {
+          #introduction .content-wrapper {
+              flex-direction: column; /* 작은 화면에서는 세로 정렬 */
+              text-align:center ;
+          }
+          #introduction .text-content,
+          #introduction .image-content{
+              flex-basis :100 % ;/* 전체 폭 사용*/
+}
+}
+</style>
+</head>
+
+<body>
+
+<!-- 헤더 -->
+<header>
+    <h1>Woobin Jeong</h1>
+    <button class="toggle-btn" onclick="toggleMenu()">☰</button>
+    <nav id="nav-menu">
+      <a href="#introduction">About Me</a>
+      <a href="#education">Education</a>
+      <a href="#academic-position">Academic Positions</a>
+      <a href="#research">Research Interests</a>
+      <a href="#publications">Publications</a>
+      <a href="#contact">Contact Me</a>
+    </nav>
+</header>
+
+<!-- 메인 콘텐츠 -->
+<main>
+    <!-- 소개 섹션 -->
+    <section id="introduction">
+      <h2>About Me</h2>
+      <div class="content-wrapper">
+          <!-- 텍스트 콘텐츠 -->
+          <div class="text-content">
+              <p>Hello, I'm Jeong Woo-bin and I'm a master of mathematical science at KAIST (Korea Advanced Institute of Science and Technology).</p>
+              <p><strong>Address:</strong><br>KAIST, 291 Daehak-ro, Yuseong-gu, Daejeon, Republic of Korea.<br>Room3425, Natural Science Building (E6-1)</p>
+              <p><strong>Contact:</strong><br>Email - wbnjeong@kaist.ac.kr
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            </p>
+          </div>
+          <!-- 이미지 콘텐츠 -->
+          <div class="image-content">
+              <img src="./images/a.jpg" alt="Profile Image">
+          </div>
+      </div>
+    </section>
+
+    <!-- 학력 섹션 -->
+    <section id="education">
+      <h2>Education</h2>
+      <ul>
+          <li><strong>M.S in Mathematical Science</strong>, KAIST (2027)</li>
+          <li><strong>B.S in Mathematics</strong>, Sogang University (2025)</li>
+      </ul>
+    </section>
+
+    <!-- 학문적 경력 섹션 -->
+    <section id="academic-position">
+      <h2>Academic Positions</h2>
+      <ul>
+          <li>20?? - Present, Assistant Professor at XYZ University</li>
+          <li>20?? - 20??, Postdoctoral Fellow at ABC Institute</li>
+          <li>20?? - 20??, Research Fellow at DEF Center</li>
+      </ul>
+    </section>
+
+    <!-- 연구 섹션 -->
+    <section id="research">
+      <h2>Research Interests</h2>
+      <ul>
+          <li>Probability Theory</li>
+          <li>Stochastic Differential Equations</li>
+          <li>Applications of Mathematical Modeling in AI</li>
+      </ul>
+    </section>
+
+    <!-- 발행물 섹션 -->
+    <section id="publications">
+        <h2>Publications</h2>
+        <ul>
+        <li>Title of Paper A"-Journal Name (20??).</li>
+        <li>Title of Paper B"-Journal Name (20??).</li>
+        <li>Title of Paper C"-Journal Name (20??).</li>
+    </ul>
+      </section>
+
+    <!-- 연락처 섹션 -->
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <p>Feel free to reach out for collaboration or inquiries.</p>
+    </section>
+ <!-- Footer -->
+ <footer>
+    &copy; Woobin Jeong | All Rights Reserved
+</footer>
+</main>
+
+
+<script>
+// 토글 버튼 동작
+function toggleMenu() {
+    const navMenu = document.getElementById('nav-menu');
+    navMenu.classList.toggle('show-nav');
+}
+</script>
+
+</body>
+
+</html>
